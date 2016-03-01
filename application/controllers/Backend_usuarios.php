@@ -1,4 +1,18 @@
 <?php
+
+/*
+ __  __   ______   __   __ ______   ______   ______   __   
+/\_\_\_\ /\  __ \ /\ \ / //\  __ \ /\  == \ /\  == \ /\ \  
+\/_/\_\/_\ \  __ \\ \ \'/ \ \  __ \\ \  __< \ \  __< \ \ \ 
+  /\_\/\_\\ \_\ \_\\ \__|  \ \_\ \_\\ \_\ \_\\ \_\ \_\\ \_\
+  \/_/\/_/ \/_/\/_/ \/_/    \/_/\/_/ \/_/ /_/ \/_/ /_/ \/_/
+
+desarrollado por: david chávarri
+t: @xavarri
+f: 2016-03-01
+
+*/
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Backend_usuarios extends CI_Controller {
@@ -14,18 +28,18 @@ class Backend_usuarios extends CI_Controller {
 		$this->key="184f93149e8d0c854fbc0fc556effc76";
 		$this->load->model('usuarios_model');
         $this->layout->setLayout('backend');
+        $this->load->library('encrypt');
     }
 
 	public function index(){
 
 		if($this->perfil==88){
-
 			$data['var']="";
 			$this->layout->view('index',$data);
 		}else{
 			$this->session->set_flashdata('ControllerMessage',
 			'No tiene privilegios para acceder a esta sección');
-			redirect(base_url('backend-login'),301);						
+			redirect(base_url('login'),301);						
 		}
 	}
 
@@ -42,7 +56,7 @@ class Backend_usuarios extends CI_Controller {
 				
 				$usuario=$this->input->post('usuario', TRUE);
 				$passprev=$this->input->post('passfrase', TRUE).$this->key;
-				$pass=md5($passprev);
+				$pass=sha1(md5($passprev));
 
 				$login=$this->usuarios_model->login($usuario,$pass);
 
@@ -58,7 +72,7 @@ class Backend_usuarios extends CI_Controller {
 				}else{
 					$this->session->set_flashdata('ControllerMessage',
 					'No tiene privilegios para acceder a esta sección');
-					redirect(base_url('backend-login'),301);						
+					redirect(base_url('login'),301);						
 				}
 			}
 
@@ -69,9 +83,10 @@ class Backend_usuarios extends CI_Controller {
 	}
 
     public function logout(){
-		$this->session->unset_userdata(array('id' => '','tipo' => '','nombre' => ''));
-		$this->session->sess_destroy("ci3");
-		redirect(base_url('backend-login'),  301);
+    	$array_items = array('id', 'tipo','nombre');
+		$this->session->unset_userdata($array_items);
+		$this->session->sess_destroy();
+		redirect(base_url('login'),  301);
 	}	
 
 

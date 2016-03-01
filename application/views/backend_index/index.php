@@ -1,136 +1,184 @@
-<div class="wrapper wrapper-content">
+<div class="p-w-md m-t-sm">
 
-    <!-- MENSAJES DE CONFIRMACIÓN -->
-    <?php if ( $this->session->flashdata('ControllerMessage') != '' ){ ?>
-        <div class="row"> 
-            <div class="col-lg-12">   
-                <div class="alert alert-info">
-                    <?=$this->session->flashdata('ControllerMessage'); ?>
-                </div>
-            </div>
-        </div>            
-    <?php } ?>
-    
     <div class="row">
         <div class="col-lg-12">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title" style="border-top: 2px solid #1c84c6;">
-                    <h5>Proyectos | Actividad reciente </h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
-                </div>
+            <div class="ibox">
                 <div class="ibox-content">
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="control-label" for="product_name">Project Name</label>
+                                <input type="text" id="product_name" name="product_name" value="" placeholder="Project Name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label class="control-label" for="price">Name</label>
+                                <input type="text" id="price" name="price" value="" placeholder="Name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label class="control-label" for="quantity">Company</label>
+                                <input type="text" id="quantity" name="quantity" value="" placeholder="Company" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="control-label" for="status">Status</label>
+                                <select name="status" id="status" class="form-control">
+                                    <option value="1" selected="">Completed</option>
+                                    <option value="0">Pending</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="table-responsive">
                         <table class="table table-striped">
-                            <thead>
-                            <tr>
 
-                                <th>ID</th>
-                                <th>Código </th>
-                                <th>Proyecto </th>
-                                <th>Responsable </th>
-                                <th>Cierre </th>
-                                <th>Días activo </th>
-                                <th>Status</th>
-                                <th>Detalle</th>
-                            </tr>
-                            </thead>
                             <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>BUI-25-JUL</td>
-                                <td>Tendido de fibra Juliac</td>
-                                <td>José Zavaleta</td>
-                                <td>30 Abril, 2015</td>
-                                <td><span class="pie">0.50/1.500</span> 40%</td>
-                                <td>25</td>
-                                <td><a href="proyectos.html"><i class="fa fa-search"></i></a></td>
-                            </tr>                    
-
+                                <td>Master project</td>
+                                <td>Patrick Smith</td>
+                                <td>$892,074</td>
+                                <td>Inceptos Hymenaeos Ltd</td>
+                                <td><strong>20%</strong></td>
+                                <td>Jul 14, 2015</td>
+                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                            </tr>
                             <tr>
                                 <td>2</td>
-                                <td>HUJ-12-YHJ</td>
-                                <td>Instalación Infraestructura San Borja</td>
-                                <td>Renzo Albarracín</td>
-                                <td>05 Mayo, 2015</td>
-                                <td><span class="pie">0.70/1.200</span> 30%</td>
-                                <td>15</td>
-                                <td><a href="proyectos.html"><i class="fa fa-search"></i></a></td>
+                                <td>Alpha project</td>
+                                <td>Alice Jackson</td>
+                                <td>$963,486</td>
+                                <td>Nec Euismod In Company</td>
+                                <td><strong>40%</strong></td>
+                                <td>Jul 16, 2015</td>
+                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
                             </tr>
-
-                            <tr class="danger">
+                            <tr>
                                 <td>3</td>
-                                <td>KJL-28-YUI</td>
-                                <td>Central base repetidora Lima</td>
-                                <td>Noemí Arrieta</td>
-                                <td>10 Abril, 2015</td>
-                                <td><span class="pie">0.20/1.350</span> 65%</td>
-                                <td>20</td>
-                                <td><a href="proyectos.html"><i class="fa fa-search"></i></a></td>
+                                <td>Betha project</td>
+                                <td>John Smith</td>
+                                <td>$996,824</td>
+                                <td>Erat Volutpat</td>
+                                <td><strong>75%</strong></td>
+                                <td>Jul 18, 2015</td>
+                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
                             </tr>
-
                             <tr>
                                 <td>4</td>
-                                <td>DFY-56-SLI</td>
-                                <td>Tendido de cableado cobre San Luis</td>
-                                <td>Erick Sulca</td>
-                                <td>25 Mayo, 2015</td>
-                                <td><span class="pie">0.80/1.400</span> 70%</td>
-                                <td>35</td>
-                                <td><a href="proyectos.html"><i class="fa fa-search"></i></a></td>
+                                <td>Gamma project</td>
+                                <td>Anna Jordan</td>
+                                <td>$105,192</td>
+                                <td>Tellus Ltd</td>
+                                <td><strong>18%</strong></td>
+                                <td>Jul 22, 2015</td>
+                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
                             </tr>
-
                             <tr>
-                                <td>5</td>
-                                <td>ERT-56-MAG</td>
-                                <td>Inspección técnica Base 2 Magadalena</td>
-                                <td>Roberto Atocha</td>
-                                <td>30 Mayo, 2015</td>
-                                <td><span class="pie">0.75/1.150</span> 65%</td>
-                                <td>32</td>
-                                <td><a href="proyectos.html"><i class="fa fa-search"></i></a></td>
+                                <td>2</td>
+                                <td>Alpha project</td>
+                                <td>Alice Jackson</td>
+                                <td>$674,803</td>
+                                <td>Nec Euismod In Company</td>
+                                <td><strong>40%</strong></td>
+                                <td>Jul 16, 2015</td>
+                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
                             </tr>
-
                             <tr>
-                                <td>6</td>
-                                <td>POL-56-MOL</td>
-                                <td>Reparación Corte de fibra La Molina</td>
-                                <td>Jaime Subiabre</td>
-                                <td>12 Mayo, 2015</td>
-                                <td><span class="pie">0.50/1.125</span> 50%</td>
-                                <td>40</td>
-                                <td><a href="proyectos.html"><i class="fa fa-search"></i></a></td>
+                                <td>1</td>
+                                <td>Master project</td>
+                                <td>Patrick Smith</td>
+                                <td>$174,729</td>
+                                <td>Inceptos Hymenaeos Ltd</td>
+                                <td><strong>20%</strong></td>
+                                <td>Jul 14, 2015</td>
+                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
                             </tr>
-
-                            <tr class="info">
-                                <td>7</td>
-                                <td>HJU-56-LIM</td>
-                                <td>Instalación antenas parabolicas</td>
-                                <td>Jaime Subiabre</td>
-                                <td>16 Mayo, 2015</td>
-                                <td><span class="pie">1.20/1.125</span> 100%</td>
-                                <td>45</td>
-                                <td><a href="proyectos.html"><i class="fa fa-search"></i></a></td>
-                            </tr>
-
                             <tr>
-                                <td>8</td>
-                                <td>FGT-36-ICA</td>
-                                <td>Tendido de fibra ICA</td>
-                                <td>Juan Ferrel</td>
-                                <td>22 Mayo, 2015</td>
-                                <td><span class="pie">0.20/1.125</span> 20%</td>
-                                <td>48</td>
-                                <td><a href="proyectos.html"><i class="fa fa-search"></i></a></td>
+                                <td>4</td>
+                                <td>Gamma project</td>
+                                <td>Anna Jordan</td>
+                                <td>$823,198</td>
+                                <td>Tellus Ltd</td>
+                                <td><strong>18%</strong></td>
+                                <td>Jul 22, 2015</td>
+                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
                             </tr>
-                            
-
+                            <tr>
+                                <td>1</td>
+                                <td>Project <small>This is example of project</small></td>
+                                <td>Patrick Smith</td>
+                                <td>$778,696</td>
+                                <td>Inceptos Hymenaeos Ltd</td>
+                                <td><strong>20%</strong></td>
+                                <td>Jul 14, 2015</td>
+                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Alpha project</td>
+                                <td>Alice Jackson</td>
+                                <td>$861,063</td>
+                                <td>Nec Euismod In Company</td>
+                                <td><strong>40%</strong></td>
+                                <td>Jul 16, 2015</td>
+                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Betha project</td>
+                                <td>John Smith</td>
+                                <td>$109,125</td>
+                                <td>Erat Volutpat</td>
+                                <td><strong>75%</strong></td>
+                                <td>Jul 18, 2015</td>
+                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Gamma project</td>
+                                <td>Anna Jordan</td>
+                                <td>$600,978</td>
+                                <td>Tellus Ltd</td>
+                                <td><strong>18%</strong></td>
+                                <td>Jul 22, 2015</td>
+                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Alpha project</td>
+                                <td>Alice Jackson</td>
+                                <td>$150,161</td>
+                                <td>Nec Euismod In Company</td>
+                                <td><strong>40%</strong></td>
+                                <td>Jul 16, 2015</td>
+                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Project <small>This is example of project</small></td>
+                                <td>Patrick Smith</td>
+                                <td>$160,586</td>
+                                <td>Inceptos Hymenaeos Ltd</td>
+                                <td><strong>20%</strong></td>
+                                <td>Jul 14, 2015</td>
+                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Gamma project</td>
+                                <td>Anna Jordan</td>
+                                <td>$110,612</td>
+                                <td>Tellus Ltd</td>
+                                <td><strong>18%</strong></td>
+                                <td>Jul 22, 2015</td>
+                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -139,4 +187,5 @@
             </div>
         </div>
     </div>
-</div>    
+
+</div>

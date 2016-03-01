@@ -20,7 +20,7 @@
             </p>
         <?php } ?>
                 
-        <form class="m-t" role="form" method="post" action="<?=base_url('backend-login') ?>">
+        <form class="m-t" role="form" method="post" action="">
             <div class="form-group">
                 <input type="email" name="usuario" class="form-control" placeholder="Usuario" required="">
             </div>
