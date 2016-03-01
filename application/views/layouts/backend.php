@@ -24,89 +24,86 @@
 
 </head>
 
-<body class="pace-done mini-navbar">
-
+<body class="mini-navbar">
     <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element"> <span>
+                                <img alt="image" class="img-circle" src="<?=base_url('public/backend/img/profile_small.jpg')?>" />
+                                 </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Chávarri</strong>
+                                 </span> <span class="text-muted text-xs block">Director <b class="caret"></b></span> </span> </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="profile.html">Perfil</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            CN3+
+                        </div>
+                    </li>              
+                    <li>
+                        <a href="<?=base_url('backend')?>"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+                    </li>                
+                    <li>
+                        <a href="<?=base_url('articulos')?>"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Artículos</span><span class="fa arrow"></span></a>
+                    </li>                
+                    <li>
+                        <a href="<?=base_url('usuarios')?>"><i class="fa fa-users"></i> <span class="nav-label">Artículos</span><span class="fa arrow"></span></a>
+                    </li>
+                </ul>
 
-    <nav class="navbar-default navbar-static-side" role="navigation">
-        <div class="sidebar-collapse">
-            <ul class="nav" id="side-menu">
-                <li class="nav-header">
-                    <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="<?=base_url('public/backend/img/profile_small.jpg')?>" />
-                             </span>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Chávarri</strong>
-                             </span> <span class="text-muted text-xs block">Director <b class="caret"></b></span> </span> </a>
-                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="profile.html">Perfil</a></li>
-                        </ul>
-                    </div>
-                    <div class="logo-element">
-                        CN3+
-                    </div>
-                </li>
-                <li>
-                    <a href="<?=base_url()?>" target="_blank"><i class="fa fa-cloud"></i> <span class="nav-label">Portada</span></a>
-                </li>                
-                <li>
-                    <a href="<?=base_url('backend')?>"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
-                </li>                
-                <li>
-                    <a href="#"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Contenido</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="<?=base_url()?>"><i class="fa fa-paper-plane-o"></i> Agregar Post </a></li>
-                        <li><a href="<?=base_url()?>"><i class="fa fa-tag"></i> Taxonomias</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="<?=base_url()?>"><i class="fa fa-database"></i> <span class="nav-label">Galería </span><span class="label label-warning pull-right">200</span></a>
-
-                </li>
-            </ul>
-
-        </div>
-    </nav>
+            </div>
+        </nav>
 
         <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                        <form role="search" class="navbar-form-custom" action="">
+                            <div class="form-group">
+                                <input type="text" placeholder="Buscar contenido..." class="form-control" name="top-search" id="top-search">
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                            </a>
+                        </li>
+                        <li><a href="<?=base_url() ?>"><i class="fa fa-cloud"></i></a></li>
+                        <li><a href="<?=base_url('logout') ?>"><i class="fa fa-sign-out"></i> Salir</a></li>
+                    </ul>
 
-        <div class="row border-bottom">
-        <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-            <form role="search" class="navbar-form-custom" action="search_results.html">
-                <div class="form-group">
-                    <input type="text" placeholder="Buscas algo?" class="form-control" name="top-search" id="top-search">
+                </nav>
+            </div>
+
+            <div class="wrapper wrapper-content animated fadeIn">
+
+                <?=$content_for_layout; ?>
+
+            </div>
+
+            <div class="footer">
+                <div class="pull-right">
+                    davidchavarri.info
                 </div>
-            </form>
-        </div>
-            <ul class="nav navbar-top-links navbar-right">
-                <li>
-                    <span class="m-r-sm text-muted welcome-message"><i class="fa fa-user"></i> <?=ucwords($this->session->userdata('nombre'))?></span>
-                </li>
-                <li>
-                    <a href="<?=base_url('backend-logout')?>">
-                        <i class="fa fa-sign-out"></i> Salir
-                    </a>
-                </li>
-            </ul>
-
-        </nav>
-        </div>
-
-        <?=$content_for_layout; ?>
-
-        <div class="footer">
-            <div class="pull-right">
-                David Chávarri <strong> <i class="fa fa-twitter"></i> @xavarri</strong>
-            </div>
-            <div>
-                <strong>CodeIgniter 3 + INSPINIA 2.0 + BOOTSTRAP 3</strong> &copy; 2016
+                <div>
+                    David Chávarri &copy; 2016 
+                </div>
             </div>
         </div>
 
-        </div>
-        </div>
+    </div>
 
     <!-- Mainly scripts -->
     
@@ -123,23 +120,10 @@
     <!-- Custom and plugin javascript -->
     <script src="<?=base_url('public/backend/inspinia/js/inspinia.js')?>"></script>
     <script src="<?=base_url('public/backend/inspinia/js/plugins/pace/pace.min.js')?>"></script>
-
-
-    <script src="<?=base_url('public/backend/inspinia/js/plugins/chosen/chosen.jquery.js')?>"></script>
-
     <script src="<?=base_url('public/backend/inspinia/js/plugins/datapicker/bootstrap-datepicker.js')?>"></script>
 
-    <script src="<?=base_url('public/backend/inspinia/js/plugins/switchery/switchery.js')?>"></script>
-
-    <!-- IonRangeSlider -->
-    <script src="<?=base_url('public/backend/inspinia/js/plugins/ionRangeSlider/ion.rangeSlider.min.js')?>"></script>
-
-    <!-- iCheck -->
-    <script src="<?=base_url('public/backend/inspinia/js/plugins/iCheck/icheck.min.js')?>"></script>
 
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-
 </body>
-
 </html>

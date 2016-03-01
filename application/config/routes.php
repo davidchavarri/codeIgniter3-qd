@@ -60,8 +60,8 @@ $route['translate_uri_dashes'] = FALSE;
 #BACKEND
 $route['backend'] = 'backend_index';
 
-$route['backend-usuarios'] = 'backend_usuarios/index';
-$route['backend-login'] = 'backend_usuarios/login';
-$route['backend-logout'] = 'backend_usuarios/logout';
+$route['usuarios'] = 'backend_usuarios/index';
+$route['login'] = 'backend_usuarios/login';
+$route['logout'] = 'backend_usuarios/logout';
 
 #$route['habitaciones'] = 'backend_habitaciones';

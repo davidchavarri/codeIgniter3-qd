@@ -6,7 +6,7 @@
 
         </div>
         <h3>Welcome to CI3+</h3>
-        <p>Esta es un demo basada en Codeigniter 3.0 + INSPINIA 2.0, lista para ser usada
+        <p>Esta es un demo basada en Codeigniter 3.0 + INSPINIA 2.5, lista para ser usada
         en cualquier proyecto web.
             <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
         </p>
@@ -20,7 +20,7 @@
             </p>
         <?php } ?>
                 
-        <form class="m-t" role="form" method="post" action="<?=base_url('backend-login') ?>">
+        <form class="m-t" role="form" method="post" action="">
             <div class="form-group">
                 <input type="email" name="usuario" class="form-control" placeholder="Usuario" required="">
             </div>

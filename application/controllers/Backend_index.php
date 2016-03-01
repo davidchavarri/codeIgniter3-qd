@@ -22,7 +22,7 @@ class Backend_index extends CI_Controller {
 
 		}else{
 			#$this->session->set_flashdata('ControllerMessage','No tiene privilegios para acceder a esta sección.');
-			redirect(base_url('backend-login'),301);
+			redirect(base_url('login'),301);
 		}
 	}
 }
